@@ -3,7 +3,7 @@ var path = require('path');
 
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'chompoo500ml-github-io')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/hello', (req, res) => res.send('Hello World!'));
 
