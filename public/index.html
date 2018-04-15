@@ -99,6 +99,9 @@
       </div>
     </dialog>
   
+<!--<div class="gitter-chat-embed" data-room="basicblog/Lobby" style="width:300px;"></div>-->
+<!--<div class="gitterchat"></div>-->
+
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.js"></script>
 <script>
@@ -133,14 +136,21 @@
       xreq.addEventListener("error", (e) => {
         console.log(xreq.response)
       });
-      // xreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       // xreq.onreadystatechange = function() {
       //     if(xreq.readyState == 4 && xreq.status == 200) {
       //         alert(xreq.responseText);
       //     }
       // }
-      xreq.open("PUT", urlString);
-      xreq.send("title="+titleAdd.value+"&body="+bodyAdd.value);
+      var data = {};
+      data.title = titleAdd.value;
+      data.body  = bodyAdd.value;
+      var json = JSON.stringify(data);
+
+      xreq.open("POST", urlString);
+      // xreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xreq.setRequestHeader('Content-type','application/json; charset=utf-8');
+      // xreq.send("title="+titleAdd.value+"&body="+bodyAdd.value);
+      xreq.send(json);
     } else {
       alert('please complete form!');
     }
@@ -186,6 +196,14 @@ aboxes.appendChild(d);
   xreq.send();
 }
 </script>
+
+
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'basicblog/Lobby'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 
   </body>
