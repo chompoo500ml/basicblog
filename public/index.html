@@ -121,7 +121,52 @@
   submitArticleButton.addEventListener('click', function() {
     submitArticle();
   });
+</script>
+
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    getArticles();
+  }
+};
+
+function getArticles() {
+  var api = "https://safe-coast-54130.herokuapp.com/api/v1/articles";
+  var urlString = api;
+  var xreq = new XMLHttpRequest();
+  xreq.addEventListener("load", (e) => {
+    var res = JSON.parse(xreq.response);
+console.log(res);
+    var aboxes = document.getElementById("aboxes");
+
+for (var key in res.data) {
+    if (res.data.hasOwnProperty(key)) {
+var d = document.createElement('div');
+d.className = "mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp";
+var articlebox = '<div class="mdl-card__title"><h3 id="title"';
+articlebox += key + ' class="title mdl-badge mdl-badge--overlap" data-badge="'+res.data[key].id+'">';
+articlebox += res.data[key].title + '</h3></div><div class="mdl-card__supporting-text"><span id="body';
+articlebox += key + ' class="mdl-typography--font-light mdl-typography--subhead">';
+//articlebox += res.data[key].body + '</span></div><div class="mdl-card__actions"><a href="#" target="_blank"><i class="material-icons">&#xE87E;</i></a></div>';
+articlebox += res.data[key].body + '</span></div><div class="mdl-card__actions" style="text-align:right;">';
+articlebox += '<button id="edit-article" data-aid="'+res.data[key].id+'" style="margin:10px;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">&#xE3C9;</i></button>';
+articlebox += '<button id="delete-article-'+res.data[key].id+'" data-aid="'+res.data[key].id+'" onclick="deleteArticle('+res.data[key].id+')" style="margin:10px;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">&#xE872;</i></button></div>';
   
+
+d.innerHTML = articlebox;
+aboxes.appendChild(d);
+    }
+}
+  var progressbar = document.getElementById("progressbar");
+  progressbar.style.visibility = "hidden";
+  });
+  xreq.addEventListener("error", (e) => {
+    console.log(xreq.response)
+  });
+  xreq.open("GET", urlString);
+  xreq.send();
+}
+
   function submitArticle() {
     var titleAdd = document.getElementById("title-add");
     var bodyAdd = document.getElementById("body-add");
@@ -155,46 +200,31 @@
       alert('please complete form!');
     }
   }
-</script>
+  
+  function deleteArticle(id) {
+      var api = "https://safe-coast-54130.herokuapp.com/api/v1/articles/"+id;
+      var urlString = api;
+      var xreq = new XMLHttpRequest();
+      xreq.addEventListener("load", (e) => {
+        var res = JSON.parse(xreq.response);
+        console.log(res);
+      });
+      xreq.addEventListener("error", (e) => {
+        console.log(xreq.response)
+      });
 
-<script>
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    getArticles();
+      xreq.open("DELETE", urlString);
+      // xreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      //xreq.setRequestHeader('Content-type','application/json; charset=utf-8');
+      // xreq.send("title="+titleAdd.value+"&body="+bodyAdd.value);
+      xreq.send();
+
   }
-};
-
-function getArticles() {
-  var api = "https://safe-coast-54130.herokuapp.com/api/v1/articles";
-  var urlString = api;
-  var xreq = new XMLHttpRequest();
-  xreq.addEventListener("load", (e) => {
-    var res = JSON.parse(xreq.response);
-console.log(res);
-    var aboxes = document.getElementById("aboxes");
-
-for (var key in res.data) {
-    if (res.data.hasOwnProperty(key)) {
-var d = document.createElement('div');
-d.className = "mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp";
-var articlebox = '<div class="mdl-card__title"><h3 id="title"';
-articlebox += key + ' class="title">';
-articlebox += res.data[key].title + '</h3></div><div class="mdl-card__supporting-text"><span id="body';
-articlebox += key + ' class="mdl-typography--font-light mdl-typography--subhead">';
-articlebox += res.data[key].body + '</span></div><div class="mdl-card__actions"><a href="#" target="_blank"><i class="material-icons">&#xE87E;</i></a></div>';
-d.innerHTML = articlebox;
-aboxes.appendChild(d);
-    }
-}
-  var progressbar = document.getElementById("progressbar");
-  progressbar.style.visibility = "hidden";
-  });
-  xreq.addEventListener("error", (e) => {
-    console.log(xreq.response)
-  });
-  xreq.open("GET", urlString);
-  xreq.send();
-}
+  
+  function updateArticle() {
+    
+  }
+  
 </script>
 
 
