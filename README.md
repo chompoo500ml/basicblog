@@ -7,6 +7,10 @@
 
 https://chompoo500ml.github.io/basicblog/
 
+## Chat
+
+[![GitHub stars](https://img.shields.io/gitter/basicblog/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog)
+
 ## How to setup dev environment
 
 - install nodejs https://nodejs.org/en/download/
