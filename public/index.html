@@ -52,6 +52,8 @@
   <body>
     <div class="basicblog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
+        
+        
 <div class="basicblog mdl-grid" id="profile">
 <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title">
@@ -61,36 +63,90 @@
   <div class="mdl-card__supporting-text center-halign">
     <h1 class="mdl-typography--font-light">Basic Blog</h1>
   </div>
-  <div class="mdl-layout-spacer"></div>
+  <div id="progressbar" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="width:600px;"></div>
+  <!--<div class="mdl-layout-spacer"></div>-->
+  <div class="mdl-card__actions" style="text-align:right;padding-right:30px;padding-bottom:20px;">
+    <button id="add-article" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">&#xE145;</i>
+    </button>
+  </div>
 </div>
 </div>
 
-<div class="basicblog mdl-grid" id="aboxes">
-<!--<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp">-->
-<!--  <div class="mdl-card__title">-->
-<!--    <h3 id="title1" class="title">xxx</h3>-->
-<!--  </div>-->
-<!--  <div class="mdl-card__supporting-text">-->
-<!--    <span id="body1" class="mdl-typography--font-light mdl-typography--subhead">xxx</span>-->
-<!--  </div>-->
-<!--  <div class="mdl-card__actions">-->
-<!--     <a href="#" target="_blank">-->
-<!--       <i class="material-icons">&#xE87E;</i>-->
-<!--     </a>-->
-<!--  </div>-->
-<!--</div>-->
-</div>
+<div class="basicblog mdl-grid" id="aboxes"></div>
 
-  
-
-
-        
-        
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
     
+    <dialog class="mdl-dialog">
+      <h4 class="mdl-dialog__title">New article</h4>
+      <div class="mdl-dialog__content">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="title-add">
+            <label class="mdl-textfield__label" for="title-add">Title</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <textarea class="mdl-textfield__input" type="text" rows= "3" id="body-add" ></textarea>
+            <label class="mdl-textfield__label" for="body-add">Contents</label>
+          </div>
+        </form>
+      </div>
+      <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button" id="submit-article"><i class="material-icons">&#xE876;</i></button>
+        <button type="button" class="mdl-button close"><i class="material-icons">&#xE14C;</i></button>
+      </div>
+    </dialog>
+  
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.js"></script>
+<script>
+  var dialog = document.querySelector('dialog');
+  var addArticleButton = document.querySelector('#add-article');
+  if (!dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  addArticleButton.addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.close();
+  });
+  
+  var submitArticleButton = document.querySelector('#submit-article');
+  submitArticleButton.addEventListener('click', function() {
+    submitArticle();
+  });
+  
+  function submitArticle() {
+    var titleAdd = document.getElementById("title-add");
+    var bodyAdd = document.getElementById("body-add");
+    if ((titleAdd.value !== "") && (bodyAdd.value !== "")) {
+      var api = "https://safe-coast-54130.herokuapp.com/api/v1/articles";
+      var urlString = api;
+      var xreq = new XMLHttpRequest();
+      xreq.addEventListener("load", (e) => {
+        var res = JSON.parse(xreq.response);
+        console.log(res);
+      });
+      xreq.addEventListener("error", (e) => {
+        console.log(xreq.response)
+      });
+      // xreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      // xreq.onreadystatechange = function() {
+      //     if(xreq.readyState == 4 && xreq.status == 200) {
+      //         alert(xreq.responseText);
+      //     }
+      // }
+      xreq.open("PUT", urlString);
+      xreq.send("title="+titleAdd.value+"&body="+bodyAdd.value);
+    } else {
+      alert('please complete form!');
+    }
+  }
+</script>
+
 <script>
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
@@ -120,8 +176,8 @@ d.innerHTML = articlebox;
 aboxes.appendChild(d);
     }
 }
-
-
+  var progressbar = document.getElementById("progressbar");
+  progressbar.style.visibility = "hidden";
   });
   xreq.addEventListener("error", (e) => {
     console.log(xreq.response)
