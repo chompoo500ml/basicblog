@@ -63,19 +63,19 @@
       <main class="mdl-layout__content">
   <div class="portfolio mdl-grid" id="aboxes">
 
-<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title">
-    <h3 id="title1" class="title">xxx</h3>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <span id="body1" class="mdl-typography--font-light mdl-typography--subhead">xxx</span>
-  </div>
-  <div class="mdl-card__actions">
-     <a href="#" target="_blank">
-       <i class="material-icons">&#xE87E;</i>
-     </a>
-  </div>
-</div>
+<!--<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp">-->
+<!--  <div class="mdl-card__title">-->
+<!--    <h3 id="title1" class="title">xxx</h3>-->
+<!--  </div>-->
+<!--  <div class="mdl-card__supporting-text">-->
+<!--    <span id="body1" class="mdl-typography--font-light mdl-typography--subhead">xxx</span>-->
+<!--  </div>-->
+<!--  <div class="mdl-card__actions">-->
+<!--     <a href="#" target="_blank">-->
+<!--       <i class="material-icons">&#xE87E;</i>-->
+<!--     </a>-->
+<!--  </div>-->
+<!--</div>-->
 
 
 
@@ -96,16 +96,16 @@
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
 
-var aboxes = document.getElementById("aboxes");
-var d = document.createElement('div');
-d.className = "mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp";
-var articlebox = '<div class="mdl-card__title"><h3 id="title"';
-articlebox += '1' + ' class="title">';
-articlebox += 'TITLE' + '</h3></div><div class="mdl-card__supporting-text"><span id="body';
-articlebox += '1' + ' class="mdl-typography--font-light mdl-typography--subhead">';
-articlebox += 'BODY' + '</span></div><div class="mdl-card__actions"><a href="#" target="_blank"><i class="material-icons">&#xE87E;</i></a></div>';
-d.innerHTML = articlebox;
-aboxes.appendChild(d);
+// var aboxes = document.getElementById("aboxes");
+// var d = document.createElement('div');
+// d.className = "mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp";
+// var articlebox = '<div class="mdl-card__title"><h3 id="title"';
+// articlebox += '1' + ' class="title">';
+// articlebox += 'TITLE' + '</h3></div><div class="mdl-card__supporting-text"><span id="body';
+// articlebox += '1' + ' class="mdl-typography--font-light mdl-typography--subhead">';
+// articlebox += 'BODY' + '</span></div><div class="mdl-card__actions"><a href="#" target="_blank"><i class="material-icons">&#xE87E;</i></a></div>';
+// d.innerHTML = articlebox;
+// aboxes.appendChild(d);
     
     getArticles();
   }
