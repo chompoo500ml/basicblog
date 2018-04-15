@@ -1,240 +1,25 @@
 <!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <title>Basic Blog</title>
-    
-<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" href="images/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />
-<link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
+    <title>BasicBlog</title>
   </head>
   <body>
-    <div class="basicblog mdl-layout mdl-js-layout has-drawer is-upgraded">
-      <main class="mdl-layout__content">
-        
-        
-<div class="basicblog mdl-grid" id="profile">
-<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title">
-  <img class="avatar" src="images/android-icon-192x192.png" />
-  <!--<img class="avatar" src="https://github.com/chompoo500ml.png?size=460" />-->
-  </div>
-  <div class="mdl-card__supporting-text center-halign">
-    <h1 class="mdl-typography--font-light">Basic Blog</h1>
-  </div>
-  <div id="progressbar" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="width:600px;"></div>
-  <!--<div class="mdl-layout-spacer"></div>-->
-  <div class="mdl-card__actions" style="text-align:right;padding-right:30px;padding-bottom:20px;">
-    <button id="add-article" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-    <i class="material-icons">&#xE145;</i>
-    </button>
-  </div>
-</div>
-</div>
+    <h1>BasicBlog</h1>
+<hr/>
+<button id="new-article" type="button" class="btn btn-primary">Add</button>
+<hr/>
+<div id="articles"></div>
 
-<div class="basicblog mdl-grid" id="aboxes"></div>
-
-      </main>
-      <div class="mdl-layout__obfuscator"></div>
-    </div>
-    
-    <dialog class="mdl-dialog">
-      <h4 class="mdl-dialog__title">New article</h4>
-      <div class="mdl-dialog__content">
-        <form action="#">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="title-add">
-            <label class="mdl-textfield__label" for="title-add">Title</label>
-          </div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <textarea class="mdl-textfield__input" type="text" rows= "3" id="body-add" ></textarea>
-            <label class="mdl-textfield__label" for="body-add">Contents</label>
-          </div>
-        </form>
-      </div>
-      <div class="mdl-dialog__actions">
-        <button type="button" class="mdl-button" id="submit-article"><i class="material-icons">&#xE876;</i></button>
-        <button type="button" class="mdl-button close"><i class="material-icons">&#xE14C;</i></button>
-      </div>
-    </dialog>
-  
-<!--<div class="gitter-chat-embed" data-room="basicblog/Lobby" style="width:300px;"></div>-->
-<!--<div class="gitterchat"></div>-->
-
-<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.js"></script>
-<script>
-  var dialog = document.querySelector('dialog');
-  var addArticleButton = document.querySelector('#add-article');
-  if (!dialog.showModal) {
-    dialogPolyfill.registerDialog(dialog);
-  }
-  addArticleButton.addEventListener('click', function() {
-    dialog.showModal();
-  });
-  dialog.querySelector('.close').addEventListener('click', function() {
-    dialog.close();
-  });
-  
-  var submitArticleButton = document.querySelector('#submit-article');
-  submitArticleButton.addEventListener('click', function() {
-    submitArticle();
-  });
-</script>
-
-<script>
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    getArticles();
-  }
-};
-
-function getArticles() {
-  var api = "https://safe-coast-54130.herokuapp.com/api/v1/articles";
-  var urlString = api;
-  var xreq = new XMLHttpRequest();
-  xreq.addEventListener("load", (e) => {
-    var res = JSON.parse(xreq.response);
-console.log(res);
-    var aboxes = document.getElementById("aboxes");
-
-for (var key in res.data) {
-    if (res.data.hasOwnProperty(key)) {
-var d = document.createElement('div');
-d.className = "mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp";
-var articlebox = '<div class="mdl-card__title"><h3 id="title"';
-articlebox += key + ' class="title mdl-badge mdl-badge--overlap" data-badge="'+res.data[key].id+'">';
-articlebox += res.data[key].title + '</h3></div><div class="mdl-card__supporting-text"><span id="body';
-articlebox += key + ' class="mdl-typography--font-light mdl-typography--subhead">';
-//articlebox += res.data[key].body + '</span></div><div class="mdl-card__actions"><a href="#" target="_blank"><i class="material-icons">&#xE87E;</i></a></div>';
-articlebox += res.data[key].body + '</span></div><div class="mdl-card__actions" style="text-align:right;">';
-articlebox += '<button id="edit-article" data-aid="'+res.data[key].id+'" style="margin:10px;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">&#xE3C9;</i></button>';
-articlebox += '<button id="delete-article-'+res.data[key].id+'" data-aid="'+res.data[key].id+'" onclick="deleteArticle('+res.data[key].id+')" style="margin:10px;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">&#xE872;</i></button></div>';
-  
-
-d.innerHTML = articlebox;
-aboxes.appendChild(d);
-    }
-}
-  var progressbar = document.getElementById("progressbar");
-  progressbar.style.visibility = "hidden";
-  });
-  xreq.addEventListener("error", (e) => {
-    console.log(xreq.response)
-  });
-  xreq.open("GET", urlString);
-  xreq.send();
-}
-
-  function submitArticle() {
-    var titleAdd = document.getElementById("title-add");
-    var bodyAdd = document.getElementById("body-add");
-    if ((titleAdd.value !== "") && (bodyAdd.value !== "")) {
-      var api = "https://safe-coast-54130.herokuapp.com/api/v1/articles";
-      var urlString = api;
-      var xreq = new XMLHttpRequest();
-      xreq.addEventListener("load", (e) => {
-        var res = JSON.parse(xreq.response);
-        console.log(res);
-      });
-      xreq.addEventListener("error", (e) => {
-        console.log(xreq.response)
-      });
-      // xreq.onreadystatechange = function() {
-      //     if(xreq.readyState == 4 && xreq.status == 200) {
-      //         alert(xreq.responseText);
-      //     }
-      // }
-      var data = {};
-      data.title = titleAdd.value;
-      data.body  = bodyAdd.value;
-      var json = JSON.stringify(data);
-
-      xreq.open("POST", urlString);
-      // xreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xreq.setRequestHeader('Content-type','application/json; charset=utf-8');
-      // xreq.send("title="+titleAdd.value+"&body="+bodyAdd.value);
-      xreq.send(json);
-    } else {
-      alert('please complete form!');
-    }
-  }
-  
-  function deleteArticle(id) {
-      var api = "https://safe-coast-54130.herokuapp.com/api/v1/articles/"+id;
-      var urlString = api;
-      var xreq = new XMLHttpRequest();
-      xreq.addEventListener("load", (e) => {
-        var res = JSON.parse(xreq.response);
-        console.log(res);
-      });
-      xreq.addEventListener("error", (e) => {
-        console.log(xreq.response)
-      });
-
-      xreq.open("DELETE", urlString);
-      // xreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      //xreq.setRequestHeader('Content-type','application/json; charset=utf-8');
-      // xreq.send("title="+titleAdd.value+"&body="+bodyAdd.value);
-      xreq.send();
-
-  }
-  
-  function updateArticle() {
-    
-  }
-  
-</script>
-
-
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'basicblog/Lobby'
-  };
-</script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="js/basicblog.js"></script>
   </body>
 </html>
