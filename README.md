@@ -9,7 +9,7 @@ https://chompoo500ml.github.io/basicblog/
 
 ## Chat
 
-[![GitHub stars](https://img.shields.io/gitter/basicblog/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/basicblog/Lobby)
 
 ## How to setup dev environment
 
