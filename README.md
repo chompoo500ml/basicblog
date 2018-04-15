@@ -11,6 +11,9 @@ https://chompoo500ml.github.io/basicblog/
 
 - install nodejs https://nodejs.org/en/download/
 - install git-scm https://git-scm.com/downloads
+- open drive/folder where you want to keep your sourcecode while developing
+- right click on empty area to open popup menu; you will find "Git Bash Here"; click over it
+- you will get Git Bash Console open up (Black screen); this is where we use git command
 - clone project by run "git clone https://github.com/chompoo500ml/basicblog.git"
 - you will find basicblog folder with our sourcecode inside
 - cd into basicblog folder and run "npm install"
