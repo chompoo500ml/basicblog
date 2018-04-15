@@ -11,3 +11,8 @@ https://chompoo500ml.github.io/basicblog/
 
 - install nodejs https://nodejs.org/en/download/
 - clone project https://github.com/chompoo500ml/basicblog.git
+- cd into project folder and run "npm install"
+- to start server for developing run "npm start"
+- all pages in public folder will be served by expressjs server
+- start fix/add something by editing files in public folder
+- 
