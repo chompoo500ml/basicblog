@@ -50,10 +50,22 @@
 
   </head>
   <body>
-    <div class="portfolio mdl-layout mdl-js-layout has-drawer is-upgraded">
+    <div class="basicblog mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
-  <div class="portfolio mdl-grid" id="aboxes">
+<div class="basicblog mdl-grid" id="profile">
+<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+  <img class="avatar" src="images/android-icon-192x192.png" />
+  <!--<img class="avatar" src="https://github.com/chompoo500ml.png?size=460" />-->
+  </div>
+  <div class="mdl-card__supporting-text center-halign">
+    <h1 class="mdl-typography--font-light">Basic Blog</h1>
+  </div>
+  <div class="mdl-layout-spacer"></div>
+</div>
+</div>
 
+<div class="basicblog mdl-grid" id="aboxes">
 <!--<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp">-->
 <!--  <div class="mdl-card__title">-->
 <!--    <h3 id="title1" class="title">xxx</h3>-->
@@ -67,10 +79,6 @@
 <!--     </a>-->
 <!--  </div>-->
 <!--</div>-->
-
-
-
-
 </div>
 
   
@@ -86,18 +94,6 @@
 <script>
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
-
-// var aboxes = document.getElementById("aboxes");
-// var d = document.createElement('div');
-// d.className = "mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp";
-// var articlebox = '<div class="mdl-card__title"><h3 id="title"';
-// articlebox += '1' + ' class="title">';
-// articlebox += 'TITLE' + '</h3></div><div class="mdl-card__supporting-text"><span id="body';
-// articlebox += '1' + ' class="mdl-typography--font-light mdl-typography--subhead">';
-// articlebox += 'BODY' + '</span></div><div class="mdl-card__actions"><a href="#" target="_blank"><i class="material-icons">&#xE87E;</i></a></div>';
-// d.innerHTML = articlebox;
-// aboxes.appendChild(d);
-    
     getArticles();
   }
 };
@@ -108,13 +104,11 @@ function getArticles() {
   var xreq = new XMLHttpRequest();
   xreq.addEventListener("load", (e) => {
     var res = JSON.parse(xreq.response);
-    console.log(res);
+console.log(res);
     var aboxes = document.getElementById("aboxes");
 
 for (var key in res.data) {
     if (res.data.hasOwnProperty(key)) {
-        console.log(key + " -> " + res.data[key]);
-        
 var d = document.createElement('div');
 d.className = "mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card mdl-shadow--2dp";
 var articlebox = '<div class="mdl-card__title"><h3 id="title"';
@@ -124,7 +118,6 @@ articlebox += key + ' class="mdl-typography--font-light mdl-typography--subhead"
 articlebox += res.data[key].body + '</span></div><div class="mdl-card__actions"><a href="#" target="_blank"><i class="material-icons">&#xE87E;</i></a></div>';
 d.innerHTML = articlebox;
 aboxes.appendChild(d);
-
     }
 }
 
