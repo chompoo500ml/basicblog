@@ -15,4 +15,3 @@ https://chompoo500ml.github.io/basicblog/
 - to start server for developing run "npm start"
 - all pages in public folder will be served by expressjs server
 - start fix/add something by editing files in public folder
-- 
