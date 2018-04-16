@@ -11,7 +11,7 @@ function getArticles() {
     $.ajax({
       url: endpoint,
       success: function(result) {
-          displayArticle(result.data);
+          displayArticles(result.data);
           attachArticleEvents();
       }
     });
@@ -53,15 +53,25 @@ function deleteArticle(id) {
     });
 }
 
-function displayArticle(data) {
+function article(adata) {
+    var articleHtml = '<div class="post-preview"><a href="post.html?title='+ adata.title +'&body='+adata.body+'"> \
+    <h2 class="post-title">' + adata.title + '</h2> \
+    <h3 class="post-subtitle">' + adata.body + '</h3> \
+    </a><p class="post-meta">Posted by <a href="#">Sammy\'s</a> on September 24, 2018</p></div><hr>';
+    return articleHtml;
+}
+
+function displayArticles(data) {
     for (var key in data) {
         if (data.hasOwnProperty(key)) {
-            var article = '<div><h3 id="title'+data[key].id+'">' + data[key].id + '-' + data[key].title + '</h3> \
+            var articleHtml = '<div><h3 id="title'+data[key].id+'">' + data[key].id + '-' + data[key].title + '</h3> \
             <p>'+data[key].body+'</p> \
             &nbsp;&nbsp;<button data-edit-aid="'+data[key].id+'" type="button" class="btn btn-primary btn-sm">Edit</button> \
             &nbsp;&nbsp;<button data-delete-aid="'+data[key].id+'" type="button" class="btn btn-danger btn-sm">Delete</button> \
             </div><hr/>';
-            $("#articles").append(article);
+            $("#articlesTemp").append(articleHtml);
+            
+            $("#articles").append(article(data[key]));
         }
     }
 }
