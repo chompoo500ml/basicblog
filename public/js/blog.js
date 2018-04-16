@@ -77,9 +77,8 @@ function displayArticles(data) {
 }
 
 function attachArticleEvents() {
-    $("#articles").off("click")
+    $("#articlesTemp").off("click")
     .on("click", "button[data-edit-aid]", function() {
-        console.log('PUT GGGG');
         editArticle($(this).attr("data-edit-aid"), "GGGG", "HHHHH");
     })
     .on("click", "button[data-delete-aid]", function() {
