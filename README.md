@@ -15,7 +15,7 @@ https://chompoo500ml.github.io/basicblog/
 
 - Because our server-side api beased on Ruby on Rails; You need to install it for local development; Check the guide from here [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
 - Clone project by "git clone https://github.com/chompoo500ml/basicblog.git"
-- Inside basicblog folder and run "bundle install"
+- Inside basicblog folder, run "bundle install"
 - From here, you can start local server for developing by run "rake dev:serve"
 - Currently, our client-side are static and serve from public folder
 - You can start to fix/add something by editing files in public folder
