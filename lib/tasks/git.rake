@@ -1,6 +1,7 @@
 namespace :git do
     desc 'git commit'
     task :commit do
+        FileUtils.cp 'public/js/config-prod.js', 'public/js/config.js'
         sh "git add ."
         sh "git commit -m #{ENV['m']}"
         sh "git push"
