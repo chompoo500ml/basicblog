@@ -1,15 +1,24 @@
+
 $(document).ready(function() {
-    getArticles();
-    $("#new-article").off("click").on("click", function() {
-        newArticle("xxxxx", "cccccc");
-    })
+    $.ajax({
+        url: "js/config.js",
+        dataType: "script",
+        success: (res) => {
+//console.log("res " + res);
+            endpointArticle = getEndpointArticle();
+            getArticles();
+            $("#new-article").off("click").on("click", function() {
+                newArticle("xxxxx", "cccccc");
+            })
+        }
+    });
 });
 
-const endpoint = "https://safe-coast-54130.herokuapp.com/api/v1/articles";
+var endpointArticle;
 
 function getArticles() {
     $.ajax({
-      url: endpoint,
+      url: endpointArticle,
       success: function(result) {
           displayArticles(result.data);
           attachArticleEvents();
@@ -19,7 +28,7 @@ function getArticles() {
 
 function newArticle(title, content) {
     $.ajax({
-        url: endpoint,
+        url: endpointArticle,
         type: "post",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -32,7 +41,7 @@ function newArticle(title, content) {
 
 function editArticle(id, title, content) {
     $.ajax({
-        url: endpoint +'/'+id,
+        url: endpointArticle +'/'+id,
         type: "put",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -45,7 +54,7 @@ function editArticle(id, title, content) {
 
 function deleteArticle(id) {
     $.ajax({
-        url: endpoint +'/'+id,
+        url: endpointArticle +'/'+id,
         type: "delete",
         success: function(result) {
             location.reload(true);
