@@ -14,10 +14,20 @@ https://chompoo500ml.github.io/basicblog/
 ## How to setup dev environment
 
 - Because our server-side api beased on Ruby on Rails; You need to install it for local development; Check the guide from here [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
-- Clone project by "git clone https://github.com/chompoo500ml/basicblog.git"
-- Inside basicblog folder, run "bundle install"
+- Do following to prepare development environment 
+
+```sh
+$ git clone https://github.com/chompoo500ml/basicblog.git
+$ cd basicblog
+$ bundle install
+$ bundle exec rake db:create db:migrate
+```
+
 - From here, you can start local server for developing by run "rake server:start"; pages will be served on http://localhost:9090
 - Currently, our client-side are static and serve from public folder; You can start to fix/add something by editing files in public folder
+
+
+
 
 ## Opensource
 
