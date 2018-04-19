@@ -19,7 +19,7 @@ https://chompoo500ml.github.io/basicblog/
 
 ## How to setup development environment
 
-- Because our server-side api beased on Ruby on Rails; You need to install it for local development; Check the guide from here [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
+- Because our server-side api are developed based on Ruby on Rails; You need to install it for local development; Check the guide from here [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
 - Do following to prepare development environment 
 
 ```sh
@@ -35,7 +35,7 @@ $ bundle exec rake db:create db:migrate
 $ rake server:start
 ```
 
-- Currently, our client-side are static and serve from public folder; You can start to fix/add something by editing files in public folder
+- Currently, our client-side are static and serve from public folder, You may start to fix/add something by editing files in public folder
 
 ## How to setup production environment
 
