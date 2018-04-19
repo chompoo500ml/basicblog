@@ -1,9 +1,10 @@
 # basicblog
 
 [![GitHub issues](https://img.shields.io/github/issues/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/issues)
-[![GitHub stars](https://img.shields.io/github/stars/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/network)
 ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/chompoo500ml/basicblog.svg)
+
+[//]: # ([![GitHub stars](https://img.shields.io/github/stars/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/network))
 
 A basic blog with features as you might expect
 
