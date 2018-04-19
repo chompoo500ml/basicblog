@@ -1,8 +1,17 @@
 # basicblog
 
+[![GitHub issues](https://img.shields.io/github/issues/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/issues)
+[![GitHub stars](https://img.shields.io/github/stars/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/chompoo500ml/basicblog.svg)](https://github.com/chompoo500ml/basicblog/network)
 ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/chompoo500ml/basicblog.svg)
 
-## link
+A basic blog with features as you might expect
+
+## Purpose
+
+The purpose of this experimental project is for bringing our knowledge to a working web application as well as to share/collaborate with others
+
+## Demo link
 
 https://chompoo500ml.github.io/basicblog/
 
@@ -10,7 +19,7 @@ https://chompoo500ml.github.io/basicblog/
 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/basicblog/Lobby)
 
-## How to setup dev environment
+## How to setup development environment
 
 - Because our server-side api beased on Ruby on Rails; You need to install it for local development; Check the guide from here [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
 - Do following to prepare development environment 
@@ -29,6 +38,10 @@ $ rake server:start
 ```
 
 - Currently, our client-side are static and serve from public folder; You can start to fix/add something by editing files in public folder
+
+## How to setup production environment
+
+Coming soon..
 
 ## Credits
 
