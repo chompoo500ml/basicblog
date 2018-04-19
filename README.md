@@ -41,7 +41,22 @@ $ rake server:start
 
 ## How to setup production environment
 
+### Restful API server
 Coming soon..
+
+### Static pages server
+Currently, we've implemented our static pages on [GitHub Pages](https://pages.github.com/)
+we create a rake task to shortening the git command for publishing our static pages to github
+by calling below command will commit all files in public folder to gh-pages branch of origin repo
+
+```sh
+$ rake git:publish
+```
+
+after that you can find your pages on https://YOUR_NAME.github.io/YOUR_REPO_NAME/
+for more info about gh-pages; please consult [GitHub Pages](https://pages.github.com/)
+
+Anyway, because all files in public folder are static; It should works out of the box with all static pages hosting as well.
 
 ## Credits
 
