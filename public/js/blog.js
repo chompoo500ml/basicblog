@@ -31,10 +31,16 @@ function newArticle(title, content) {
         url: endpointArticle,
         type: "post",
         contentType: "application/json; charset=utf-8",
+        //contentType: "application/vnd.api+json; charset=utf-8",
         dataType: "json",
         data: JSON.stringify({ title: title, body: content }),
+        //data: JSON.stringify({ data: { type: "articles", attributes: {title: title, body: content}} }),
+        //data: JSON.stringify({ article: {title: title, body: content} }),
         success: function(result) {
             location.reload(true);
+        },
+        error: function(result){
+            console.log(result);
         }
     });
 }

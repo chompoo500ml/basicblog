@@ -15,9 +15,9 @@ class Api::V1::ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(article_params)
-
     if @article.save
-      render json: ArticleSerializer.new(@article).serialized_json, status: :created, location: @article
+      #render json: ArticleSerializer.new(@article).serialized_json, status: :created, location: @article
+      render json: ArticleSerializer.new(@article).serialized_json, status: :created
     else
       render json: @article.errors, status: :unprocessable_entity
     end
