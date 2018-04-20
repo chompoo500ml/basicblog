@@ -8,10 +8,12 @@ development:
   database: basicblog_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL_TEST'] %>
+  <<: *default
+  database: basicblog_test
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # url: <%= ENV['DATABASE_URL_TEST'] %>
 
 production:
   adapter: postgresql

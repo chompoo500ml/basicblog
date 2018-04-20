@@ -1,3 +1,3 @@
 function getEndpointArticle() {
-  return "/api/v1/articles";
+  return "/api/v2/articles";
 }
