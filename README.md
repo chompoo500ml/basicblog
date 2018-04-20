@@ -39,7 +39,7 @@ $ rake server:start
 
 ## How to setup production environment
 
-### Restful API server
+### REST API server
 Coming soon..
 
 ### Static pages server

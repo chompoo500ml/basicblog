@@ -71,17 +71,27 @@ function article(adata) {
 }
 
 function displayArticles(data) {
-    for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-            var articleHtml = '<div><h3 id="title'+data[key].id+'">' + data[key].id + '-' + data[key].title + '</h3> \
-            <p>'+data[key].body+'</p> \
-            &nbsp;&nbsp;<button data-edit-aid="'+data[key].id+'" type="button" class="btn btn-primary btn-sm">Edit</button> \
-            &nbsp;&nbsp;<button data-delete-aid="'+data[key].id+'" type="button" class="btn btn-danger btn-sm">Delete</button> \
-            </div><hr/>';
-            $("#articlesTemp").append(articleHtml);
+    // for (var key in data) {
+    //     if (data.hasOwnProperty(key)) {
+    //         var articleHtml = '<div><h3 id="title'+data[key].id+'">' + data[key].id + '-' + data[key].title + '</h3> \
+    //         <p>'+data[key].body+'</p> \
+    //         &nbsp;&nbsp;<button data-edit-aid="'+data[key].id+'" type="button" class="btn btn-primary btn-sm">Edit</button> \
+    //         &nbsp;&nbsp;<button data-delete-aid="'+data[key].id+'" type="button" class="btn btn-danger btn-sm">Delete</button> \
+    //         </div><hr/>';
+    //         $("#articlesTemp").append(articleHtml);
             
-            $("#articles").append(article(data[key]));
-        }
+    //         $("#articles").append(article(data[key]));
+    //     }
+    // }
+    for (var i = 0; i < data.length; i++) {
+        var articleHtml = '<div><h3 id="title'+data[i].id+'">' + data[i].id + '-' + data[i].attributes.title + '</h3> \
+        <p>'+data[i].attributes.body+'</p> \
+        &nbsp;&nbsp;<button data-edit-aid="'+data[i].id+'" type="button" class="btn btn-primary btn-sm">Edit</button> \
+        &nbsp;&nbsp;<button data-delete-aid="'+data[i].id+'" type="button" class="btn btn-danger btn-sm">Delete</button> \
+        </div><hr/>';
+        $("#articlesTemp").append(articleHtml);
+        
+        $("#articles").append(article(data[i].attributes));
     }
 }
 
