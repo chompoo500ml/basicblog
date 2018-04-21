@@ -1,3 +1,4 @@
+var endpointArticle;
 
 $(document).ready(function() {
     $.ajax({
@@ -14,7 +15,6 @@ $(document).ready(function() {
     });
 });
 
-var endpointArticle;
 
 function getArticles() {
     $.ajax({
