@@ -1,45 +1,46 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
+import '../assets/scss/main.scss'
 
-import Header from '../components/header'
-import './index.css'
+import Footer from '../components/Footer'
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-)
-
-Layout.propTypes = {
-  children: PropTypes.func,
-}
-
-export default Layout
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
+class Template extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: 'is-loading'
     }
   }
-`
+
+  componentDidMount () {
+    this.timeoutId = setTimeout(() => {
+        this.setState({loading: ''});
+    }, 100);
+  }
+
+  componentWillUnmount () {
+    if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
+    }
+  }
+
+  render() {
+    const { children } = this.props
+
+    return (
+      <div className={`body ${this.state.loading}`}>
+        <div id="wrapper">
+
+          {children()}
+          <Footer />
+        </div>
+      </div>
+    )
+  }
+}
+
+Template.propTypes = {
+  children: React.PropTypes.func
+}
+
+export default Template
