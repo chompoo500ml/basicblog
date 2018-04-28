@@ -24,7 +24,11 @@ namespace :jekyll do
       sh "JEKYLL_ENV=production bundle exec jekyll build"
     end
   end
-
+  
+  desc 'jekyll deploy to github pages'
+  task :deploy do
+    sh "git subtree push --prefix client/_site origin gh-pages"
+  end
 end
 
 task :server => ["sinatra:serve"]
