@@ -1,0 +1,7 @@
+namespace :sinatra do
+    desc 'start sinatra serve'
+    task :serve do
+        #FileUtils.cp 'public/js/config-dev.js', 'public/js/config.js'
+        sh "bundle exec ruby server.rb"
+    end
+end
