@@ -27,7 +27,7 @@ namespace :jekyll do
   
   desc 'jekyll deploy to github pages'
   task :deploy do
-    sh "git subtree push --prefix client/_site origin gh-pages"
+    sh "git subtree push --prefix ./client/_site origin gh-pages"
   end
 end
 
