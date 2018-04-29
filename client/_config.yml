@@ -2,7 +2,7 @@ title: basicblog
 email: chompoo@gang500.ml
 description: >-
   A basic blog with features as you might expect.
-baseurl: ""
+baseurl: "/basicblog"
 url: "https://chompoo500ml.github.io"
 github_username: chompoo500ml
 
