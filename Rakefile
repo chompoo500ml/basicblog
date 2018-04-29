@@ -25,12 +25,21 @@ namespace :jekyll do
     end
   end
   
-  desc 'jekyll deploy to github pages'
+  desc 'jekyll deploying for github pages'
   task :deploy do
-    sh "git subtree push --prefix ./client/_site origin gh-pages"
+    sh "git subtree push --prefix client origin gh-pages"
   end
+  
 end
 
 task :server => ["sinatra:serve"]
 task :client => ["jekyll:serve"]
+
+desc 'git push to github origin/master'
+task :push do
+  sh "git add ."
+  sh "git commit -m #{ENV['m']}"
+  sh "git push origin master"
+end
+
 task :test1 => ["jekyll:build", "jekyll:serve"]
