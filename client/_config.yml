@@ -1,5 +1,5 @@
 title: basicblog
 description: A basic blog with features as you might expect.
-show_downloads: true
-google_analytics:
-theme: jekyll-theme-cayman
+
+plugins:
+  - jekyll-feed
