@@ -1,3 +1,3 @@
-## how to preparing development environment
+## how to prepare development environment
 
 Coming soon...

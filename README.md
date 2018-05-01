@@ -22,7 +22,8 @@ https://chompoo500ml.github.io/basicblog/
 If you found a bug, Please let us know by creating an issue.
 
 We welcome pull requests from anyone. See the list of [contributors](https://github.com/chompoo500ml/basicblog/graphs/contributors) who participated in this project.
-Check out our [how to preparing development environment](/DEVENV.md) to find out how you can do so.
+
+Check out our [how to prepare development environment](/DEVENV.md) to find out how you can do so.
 
 ## Credits
 
