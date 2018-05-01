@@ -25,6 +25,9 @@ We welcome pull requests from anyone. See the list of [contributors](https://git
 
 Check out our [how to prepare development environment](/DEVENV.md) to find out how you can do so.
 
+## How to deploy
+
+
 ## Credits
 
 Theme based on [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog) from Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.
