@@ -17,13 +17,17 @@ https://chompoo500ml.github.io/basicblog/
 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/basicblog/Lobby)
 
-## Development
+## How to contribute
+
+If you found a bug, Please let us know by creating an issue.
+
+We welcome pull requests from anyone. See the list of [contributors](https://github.com/chompoo500ml/basicblog/graphs/contributors) who participated in this project.
+Check out our [how to preparing development environment](/DEVENV.md) to find out how you can do so.
 
 ## Credits
 
-<!--Theme based on [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog) from Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.-->
+Theme based on [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog) from Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.
 
-Theme based on [Cayman](https://github.com/pages-themes/cayman). Under the [CC0-1.0](https://github.com/pages-themes/cayman/blob/master/LICENSE) license.
 <div>favicon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 ## License
